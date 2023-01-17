@@ -6,7 +6,6 @@ query {
           title
           description
           price
-          condition
           slug
           image {
             data {
