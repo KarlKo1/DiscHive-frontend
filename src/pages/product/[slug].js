@@ -8,16 +8,22 @@ import {
   Buy,
 } from "../../styles/ProductDetails";
 import { BsFillPlusCircleFill, BsFillDashCircleFill } from "react-icons/bs";
+import { useStateContext } from "../../lib/context";
 
 export default function ProductDetails() {
+  //Use State
+  const { quantity, increaseQuantity, decreaseQuantity } = useStateContext();
+
   //Fetch slug
   const { query } = useRouter();
+
   //Fetch GraphQL data
   const [results] = useQuery({
     query: GET_PRODUCT_QUERY,
     variables: { slug: query.slug },
   });
   const { data, fetching, error } = results;
+
   //Check for the data coming in
   if (fetching) return <p>Loading...</p>;
   if (error) return <p>Oh no... {error.message}</p>;
@@ -34,11 +40,11 @@ export default function ProductDetails() {
         <Quantity>
           <span>Quantity</span>
           <button>
-            <BsFillDashCircleFill />
+            <BsFillDashCircleFill onClick={decreaseQuantity} />
           </button>
-          <p>0</p>
+          <p>{quantity}</p>
           <button>
-            <BsFillPlusCircleFill />
+            <BsFillPlusCircleFill onClick={increaseQuantity} />
           </button>
         </Quantity>
         <Buy>Add to cart</Buy>
