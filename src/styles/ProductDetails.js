@@ -13,7 +13,7 @@ export const ProductInfo = styled.div`
   width: 40%;
   button {
     font-size: 1rem;
-    font-weight: medium;
+    font-weight: 500;
     padding: 0.5rem 1rem;
     cursor: pointer;
   }
@@ -37,7 +37,7 @@ export const Quantity = styled.div`
     color: var(--secondary);
   }
   svg {
-    color: #494949;
+    color: #4f5d75;
   }
 `;
 
@@ -46,4 +46,5 @@ export const Buy = styled.button`
   background: var(--primary);
   color: white;
   font-weight: 500;
+  border: none;
 `;

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
 * {
   margin: 0;
@@ -11,8 +11,13 @@ body {
   margin: 0rem 10%;
   background: #fff;
   font-family: "Inter", sans-serif;
-  --primary: #2d2d2d;
-  --secondary: #535353;
+  --primary: #2ec4b6;
+  --secondary: #0d9183;
+  --tertiary: #ff9f1c;
+}
+input,
+button {
+  font-family: "Inter", sans-serif;
 }
 
 h2 {

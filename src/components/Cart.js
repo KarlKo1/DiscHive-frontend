@@ -5,13 +5,15 @@ import {
   Card,
   CardInfo,
   EmptyStyle,
+  Checkout,
 } from "../styles/CartStyle";
 import { FiShoppingCart } from "react-icons/fi";
 import { BsFillPlusCircleFill, BsFillDashCircleFill } from "react-icons/bs";
 import { Quantity } from "../styles/ProductDetails";
 
 export default function Cart() {
-  const { cartItems, setShowCart, onAdd, onRemove } = useStateContext();
+  const { cartItems, setShowCart, onAdd, onRemove, totalPrice } =
+    useStateContext();
   return (
     <CartWrapper onClick={() => setShowCart(false)}>
       <CartStyle onClick={(e) => e.stopPropagation()}>
@@ -31,7 +33,7 @@ export default function Cart() {
                 />
                 <CardInfo>
                   <h3>{item.title}</h3>
-                  <h3>{item.price}</h3>
+                  <h3>{item.price}€</h3>
                   <Quantity>
                     <span>Quantity</span>
                     <button onClick={() => onRemove(item)}>
@@ -46,6 +48,12 @@ export default function Cart() {
               </Card>
             );
           })}
+        {cartItems.length >= 1 && (
+          <Checkout>
+            <h3>Subtotal: {Math.round(totalPrice * 100) / 100}€</h3>
+            <button>Purchase</button>
+          </Checkout>
+        )}
       </CartStyle>
     </CartWrapper>
   );
