@@ -11,6 +11,7 @@ import {
 import { FiShoppingCart } from "react-icons/fi";
 import { BsFillPlusCircleFill, BsFillDashCircleFill } from "react-icons/bs";
 import { Quantity } from "../styles/ProductDetails";
+import getStripe from "../lib/getStripe";
 
 //Animation variants
 const card = {
@@ -32,6 +33,19 @@ const cards = {
 export default function Cart() {
   const { cartItems, setShowCart, onAdd, onRemove, totalPrice } =
     useStateContext();
+
+  //Payment
+  const handleCheckout = async () => {
+    const stripe = await getStripe();
+    const response = await fetch("/api/stripe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(cartItems),
+    });
+    const data = await response.json();
+    await stripe.redirectToCheckout({ sessionId: data.id });
+  };
+
   return (
     <CartWrapper
       initial={{ opacity: 0 }}
@@ -86,7 +100,7 @@ export default function Cart() {
         {cartItems.length >= 1 && (
           <Checkout layout>
             <h3>Subtotal: {Math.round(totalPrice * 100) / 100}€</h3>
-            <button>Purchase</button>
+            <button onClick={handleCheckout}>Purchase</button>
           </Checkout>
         )}
       </CartStyle>
