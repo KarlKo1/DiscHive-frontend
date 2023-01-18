@@ -12,7 +12,8 @@ import { useStateContext } from "../../lib/context";
 
 export default function ProductDetails() {
   //Use State
-  const { quantity, increaseQuantity, decreaseQuantity } = useStateContext();
+  const { quantity, increaseQuantity, decreaseQuantity, onAdd } =
+    useStateContext();
 
   //Fetch slug
   const { query } = useRouter();
@@ -29,7 +30,8 @@ export default function ProductDetails() {
   if (error) return <p>Oh no... {error.message}</p>;
 
   //Extract data
-  const { title, description, image } = data.products.data[0].attributes;
+  const productData = data.products.data[0].attributes;
+  const { title, description, image } = productData;
 
   return (
     <DetailsStyle>
@@ -47,7 +49,7 @@ export default function ProductDetails() {
             <BsFillPlusCircleFill onClick={increaseQuantity} />
           </button>
         </Quantity>
-        <Buy>Add to cart</Buy>
+        <Buy onClick={() => onAdd(productData, quantity)}>Add to cart</Buy>
       </ProductInfo>
     </DetailsStyle>
   );
