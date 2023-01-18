@@ -36,6 +36,7 @@ export const NavItems = styled.div`
     height: 1.3rem;
     border-radius: 50%;
     font-size: 0.75rem;
+    font-weight: 600;
     position: absolute;
     right: -10%;
     top: -20%;
