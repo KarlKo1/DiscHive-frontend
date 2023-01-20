@@ -11,9 +11,12 @@ body {
   margin: 0rem 10%;
   background: #fff;
   font-family: "Inter", sans-serif;
-  --primary: #2ec4b6;
+  --primary: #070606;
   --secondary: #0d9183;
   --tertiary: #ff9f1c;
+  --shadow-primary: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --shadow-secondary: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.1) 0px 1px 3px -1px;
 }
 input,
 button {

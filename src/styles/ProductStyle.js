@@ -6,7 +6,7 @@ export const ProductStyle = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: var(--shadow-primary);
   img {
     width: 100%;
     cursor: pointer;
