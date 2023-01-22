@@ -13,7 +13,7 @@ export default function Nav() {
   const { user, error, isLoading } = useUser();
   return (
     <NavStyle>
-      <Link href={"/"}>DiscWorld</Link>
+      <Link href={"/"}>DiscHive</Link>
       <NavItems>
         <User />
         <div onClick={() => setShowCart(true)}>
