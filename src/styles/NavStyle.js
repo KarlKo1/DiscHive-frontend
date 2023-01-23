@@ -15,7 +15,6 @@ export const NavItems = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  cursor: pointer;
 
   div {
     margin-left: 3rem;
@@ -23,6 +22,7 @@ export const NavItems = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
   }
   h3 {
     font-size: 1rem;

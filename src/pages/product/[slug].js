@@ -9,6 +9,7 @@ import {
 } from "../../styles/ProductDetails";
 import { BsFillPlusCircleFill, BsFillDashCircleFill } from "react-icons/bs";
 import { useStateContext } from "../../lib/context";
+import formatMoney from "../../lib/formatMoney";
 
 export default function ProductDetails() {
   //Use State
@@ -31,7 +32,8 @@ export default function ProductDetails() {
 
   //Extract data
   const productData = data.products.data[0].attributes;
-  const { title, description, image } = productData;
+  console.log(productData);
+  const { title, description, image, price } = productData;
 
   return (
     <DetailsStyle>
@@ -39,6 +41,7 @@ export default function ProductDetails() {
       <ProductInfo>
         <h3>{title}</h3>
         <p>{description}</p>
+        <p>{formatMoney(price)}</p>
         <Quantity>
           <span>Quantity</span>
           <button>

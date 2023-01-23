@@ -12,6 +12,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { BsFillPlusCircleFill, BsFillDashCircleFill } from "react-icons/bs";
 import { Quantity } from "../styles/ProductDetails";
 import getStripe from "../lib/getStripe";
+import formatMoney from "../lib/formatMoney";
 
 //Animation variants
 const card = {
@@ -81,7 +82,7 @@ export default function Cart() {
                   />
                   <CardInfo>
                     <h3>{item.title}</h3>
-                    <h3>{item.price}€</h3>
+                    <h3>{formatMoney(item.price)}</h3>
                     <Quantity>
                       <span>Quantity</span>
                       <button onClick={() => onRemove(item)}>
@@ -99,7 +100,7 @@ export default function Cart() {
         </Cards>
         {cartItems.length >= 1 && (
           <Checkout layout>
-            <h3>Subtotal: {Math.round(totalPrice * 100) / 100}€</h3>
+            <h3>Subtotal: {formatMoney(totalPrice * 100)}</h3>
             <button onClick={handleCheckout}>Purchase</button>
           </Checkout>
         )}

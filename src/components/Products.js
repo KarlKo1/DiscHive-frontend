@@ -1,5 +1,6 @@
 import { ProductStyle } from "../styles/ProductStyle";
 import Link from "next/link";
+import formatMoney from "../lib/formatMoney";
 
 export default function Products({ product }) {
   //Extract the info from props
@@ -12,7 +13,7 @@ export default function Products({ product }) {
         </div>
       </Link>
       <h2>{title}</h2>
-      <h2>{price}</h2>
+      <h2>{formatMoney(price)}</h2>
     </ProductStyle>
   );
 }
