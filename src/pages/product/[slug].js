@@ -11,11 +11,17 @@ import { BsFillPlusCircleFill, BsFillDashCircleFill } from "react-icons/bs";
 import { useStateContext } from "../../lib/context";
 import formatMoney from "../../lib/formatMoney";
 import { toast } from "react-hot-toast";
+import { useEffect } from "react";
 
 export default function ProductDetails() {
   //Use State
-  const { quantity, increaseQuantity, decreaseQuantity, onAdd } =
+  const { quantity, increaseQuantity, decreaseQuantity, onAdd, setQuantity } =
     useStateContext();
+
+  //Reset quantity
+  useEffect(() => {
+    setQuantity(1);
+  }, []);
 
   //Fetch slug
   const { query } = useRouter();
