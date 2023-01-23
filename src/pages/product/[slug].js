@@ -10,6 +10,7 @@ import {
 import { BsFillPlusCircleFill, BsFillDashCircleFill } from "react-icons/bs";
 import { useStateContext } from "../../lib/context";
 import formatMoney from "../../lib/formatMoney";
+import { toast } from "react-hot-toast";
 
 export default function ProductDetails() {
   //Use State
@@ -32,8 +33,12 @@ export default function ProductDetails() {
 
   //Extract data
   const productData = data.products.data[0].attributes;
-  console.log(productData);
   const { title, description, image, price } = productData;
+
+  //Create a toast
+  const notify = () => {
+    toast.success(`${title} added to your cart!`, { duration: 2000 });
+  };
 
   return (
     <DetailsStyle>
@@ -52,7 +57,14 @@ export default function ProductDetails() {
             <BsFillPlusCircleFill onClick={increaseQuantity} />
           </button>
         </Quantity>
-        <Buy onClick={() => onAdd(productData, quantity)}>Add to cart</Buy>
+        <Buy
+          onClick={() => {
+            onAdd(productData, quantity);
+            notify();
+          }}
+        >
+          Add to cart
+        </Buy>
       </ProductInfo>
     </DetailsStyle>
   );
