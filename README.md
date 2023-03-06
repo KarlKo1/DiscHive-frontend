@@ -4,6 +4,8 @@ Authenctication was done with Auth0, payment, invoicing etc. with Stripe.
 
 Also tried Cloudinary to optimize images.
 
+Backend code [link](https://github.com/KarlKo1/DiscHive-backend).
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
