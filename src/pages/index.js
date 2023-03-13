@@ -29,6 +29,9 @@ export default function Home() {
       </Head>
 
       <main>
+        <h1 style={{ color: "red" }}>
+          This is a demo. Purchases will not be made!
+        </h1>
         <Gallery>
           {products.map((product) => (
             <Products key={product.attributes.slug} product={product} />
