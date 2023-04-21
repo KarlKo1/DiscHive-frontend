@@ -10,7 +10,6 @@ export default function User() {
     return (
       <div onClick={() => route.push("/api/auth/login")}>
         <AiOutlineUser />
-        <h3>Profile</h3>
       </div>
     );
   return (

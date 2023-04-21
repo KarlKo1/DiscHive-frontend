@@ -23,7 +23,6 @@ export default function Nav() {
             </motion.span>
           )}
           <FiShoppingCart />
-          <h3>Cart</h3>
         </div>
       </NavItems>
       <AnimatePresence>{showCart && <Cart />}</AnimatePresence>
