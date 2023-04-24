@@ -3,11 +3,14 @@ import { useQuery } from "urql";
 import { PRODUCT_QUERY } from "../lib/query";
 import Products from "../components/Products";
 import { Gallery } from "../styles/Gallery";
+import { useRef } from "react";
+import About from "../components/About";
 
 export default function Home() {
   //Fetch products from strapi
   const [results] = useQuery({ query: PRODUCT_QUERY });
   const { data, fetching, error } = results;
+  const resultRef = useRef(null);
 
   //Check for the data coming in
   if (fetching) return <p>Loading...</p>;
@@ -29,12 +32,17 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 style={{ color: "red" }}>
+        <About resultRef={resultRef} />
+        <h2 style={{ color: "red" }}>
           This is a demo. Purchases will not be made!
-        </h1>
+        </h2>
         <Gallery>
           {products.map((product) => (
-            <Products key={product.attributes.slug} product={product} />
+            <Products
+              key={product.attributes.slug}
+              product={product}
+              ref={resultRef}
+            />
           ))}
         </Gallery>
       </main>

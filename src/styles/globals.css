@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -8,9 +7,11 @@
 
 html,
 body {
+  min-height: 100vh;
   margin: 0rem 10%;
   background: #fff;
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
+
   --primary: #070606;
   --secondary: #0d9183;
   --tertiary: #ff9f1c;
@@ -18,9 +19,13 @@ body {
   --shadow-secondary: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.1) 0px 1px 3px -1px;
 }
+body {
+  display: flex;
+  flex-direction: column;
+}
 input,
 button {
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 h2 {
