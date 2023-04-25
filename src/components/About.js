@@ -54,10 +54,16 @@ export const AboutDiv = styled.div`
     radial-gradient(circle 50px at bottom right, #0000 98%, #000) bottom right;
   -webkit-mask-size: 51% 51%;
   -webkit-mask-repeat: no-repeat;
+  @media (max-width: 1024px) {
+    height: 100%;
+  }
 `;
 export const AboutStyle = styled.div`
   display: flex;
   width: 100%;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 export const AboutInfo = styled.div`
   flex: 1;
@@ -65,12 +71,12 @@ export const AboutInfo = styled.div`
   background-color: #d8e2eb;
   color: #2a2b2b;
   h1 {
-    font-size: 3.25rem;
+    font-size: clamp(1.5rem, 0.936rem + 1.9284vw, 3.25rem);
     font-weight: normal;
     padding: 2rem 0 2rem 0;
   }
   p {
-    font-size: 1.25rem;
+    font-size: clamp(0.75rem, 0.5888rem + 0.551vw, 1.25rem);
   }
   button {
     background-color: #222;
@@ -79,7 +85,7 @@ export const AboutInfo = styled.div`
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-size: 12px;
+    font-size: clamp(0.5rem, 0.4194rem + 0.2755vw, 0.75rem);
     font-weight: 700;
     line-height: 1.5;
     margin: 0;
@@ -92,7 +98,6 @@ export const AboutInfo = styled.div`
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    width: 30%;
     &:hover,
     &:focus {
       opacity: 0.75;
@@ -116,13 +121,17 @@ export const AboutImg = styled.div`
 
 export const Description = styled.div`
   text-align: center;
-  height: 40vh;
-  padding: 4rem;
+  height: auto;
+
+  padding: 6rem;
+  @media (max-width: 468px) {
+    padding: 2rem;
+  }
   h2 {
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 1.0165rem + 1.6529vw, 3rem);
   }
   p {
-    font-size: 1.25rem;
+    font-size: clamp(0.75rem, 0.5888rem + 0.551vw, 1.25rem);
     margin-top: 1rem;
   }
 `;
