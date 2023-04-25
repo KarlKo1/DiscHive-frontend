@@ -2,6 +2,7 @@ import { ProductStyle } from "../styles/ProductStyle";
 import Link from "next/link";
 import formatMoney from "../lib/formatMoney";
 import { forwardRef, useRef } from "react";
+
 const Products = forwardRef((props, ref) => {
   //Extract the info from props
   const { title, price, image, slug } = props.product.attributes;
@@ -17,4 +18,5 @@ const Products = forwardRef((props, ref) => {
     </ProductStyle>
   );
 });
+Products.displayName = "Products";
 export default Products;
