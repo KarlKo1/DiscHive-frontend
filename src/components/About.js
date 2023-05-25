@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import banner from "../assets/images/banner.png";
+import Image from "next/image";
 
 export default function About() {
   const executeScroll = () => {
@@ -19,7 +20,12 @@ export default function About() {
             <button onClick={executeScroll}>Shop Now</button>
           </AboutInfo>
           <AboutImg>
-            <img src={banner.src} alt="discgolf" />
+            <Image
+              fill
+              className="image-position"
+              src={banner.src}
+              alt="discgolf"
+            />
           </AboutImg>
         </AboutStyle>
       </AboutDiv>
@@ -111,6 +117,7 @@ export const AboutImg = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   display: grid;
+  position: relative;
   place-content: center;
   img {
     width: 100%;

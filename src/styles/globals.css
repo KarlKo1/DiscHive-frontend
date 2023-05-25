@@ -55,3 +55,7 @@ a {
 p {
   line-height: 150%;
 }
+
+.image-position {
+  position: inherit !important;
+}
