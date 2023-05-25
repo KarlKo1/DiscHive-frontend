@@ -10,7 +10,6 @@ export default function Home() {
   //Fetch products from strapi
   const [results] = useQuery({ query: PRODUCT_QUERY });
   const { data, fetching, error } = results;
-  const resultRef = useRef(null);
 
   //Check for the data coming in
   if (fetching) return <p>Loading...</p>;
@@ -32,17 +31,13 @@ export default function Home() {
       </Head>
 
       <main>
-        <About resultRef={resultRef} />
+        <About />
         <h2 style={{ color: "red" }}>
           This is a demo. Purchases will not be made!
         </h2>
         <Gallery>
           {products.map((product) => (
-            <Products
-              key={product.attributes.slug}
-              product={product}
-              ref={resultRef}
-            />
+            <Products key={product.attributes.slug} product={product} />
           ))}
         </Gallery>
       </main>

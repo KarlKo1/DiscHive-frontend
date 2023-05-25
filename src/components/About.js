@@ -1,13 +1,11 @@
-import { useRef } from "react";
-
 import styled from "styled-components";
 import banner from "../assets/images/banner.png";
 
-export default function About({ resultRef }) {
-  const myRef = useRef(null);
-
-  const executeScroll = () =>
-    resultRef.current.scrollIntoView({ behavior: "smooth" });
+export default function About() {
+  const executeScroll = () => {
+    const element = document.getElementById("shop");
+    element.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <>
       <AboutDiv>
@@ -25,7 +23,7 @@ export default function About({ resultRef }) {
           </AboutImg>
         </AboutStyle>
       </AboutDiv>
-      <Description>
+      <Description id="shop">
         <h2>What We Do</h2>
         <p>
           We offer a wide selection of high-quality disc golf equipment,
