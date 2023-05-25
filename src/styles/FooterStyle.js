@@ -6,8 +6,6 @@ export const FooterStyle = styled.footer`
   justify-content: center;
   align-items: center;
   background-color: #d8e2eb;
-  width: 100%;
-  margin-top: 10rem;
 `;
 
 export const FooterItems = styled.div`

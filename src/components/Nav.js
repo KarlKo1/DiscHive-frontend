@@ -6,11 +6,9 @@ import { useStateContext } from "../lib/context";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
 import User from "./User";
-import { useUser } from "@auth0/nextjs-auth0/client";
 
 export default function Nav() {
   const { showCart, setShowCart, totalQuantity } = useStateContext();
-  const { user, error, isLoading } = useUser();
   return (
     <NavStyle>
       <Link href={"/"}>DiscHive</Link>

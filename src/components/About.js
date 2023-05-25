@@ -74,7 +74,7 @@ export const AboutInfo = styled.div`
     padding: 2rem 0 2rem 0;
   }
   p {
-    font-size: clamp(0.75rem, 0.5888rem + 0.551vw, 1.25rem);
+    font-size: clamp(1rem, 0.8337rem + 0.3469vw, 1.25rem);
   }
   button {
     background-color: #222;
@@ -122,14 +122,14 @@ export const Description = styled.div`
   height: auto;
 
   padding: 6rem;
-  @media (max-width: 468px) {
+  @media (max-width: 767px) {
     padding: 2rem;
   }
   h2 {
     font-size: clamp(1.5rem, 1.0165rem + 1.6529vw, 3rem);
   }
   p {
-    font-size: clamp(0.75rem, 0.5888rem + 0.551vw, 1.25rem);
+    font-size: clamp(1rem, 0.8337rem + 0.3469vw, 1.25rem);
     margin-top: 1rem;
   }
 `;

@@ -18,23 +18,32 @@ body {
   --shadow-primary: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   --shadow-secondary: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.1) 0px 1px 3px -1px;
+  @media (max-width: 767px) {
+    margin: 0rem 5%;
+  }
 }
+
 body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
+
 input,
 button {
   font-family: "Raleway", sans-serif;
 }
+h1 {
+  font-size: clamp(1rem, 0.8337rem + 0.3469vw, 1.25rem);
+}
 
 h2 {
-  font-size: 1.2rem;
+  font-size: clamp(0.8rem, 0.5339rem + 0.5551vw, 1.2rem);
   color: var(--primary);
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 0.667rem + 0.2775vw, 1rem);
   color: var(--secondary);
 }
 

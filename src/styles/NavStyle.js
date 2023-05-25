@@ -40,8 +40,8 @@ export const NavItems = styled.div`
     font-size: 0.75rem;
     font-weight: 600;
     position: absolute;
-    right: -10%;
-    top: -20%;
+    right: -50%;
+    top: -45%;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,7 +1,6 @@
-import Link from "next/link";
 import { FooterStyle, FooterItems } from "../styles/FooterStyle";
 
-export default function Nav() {
+export default function Footer() {
   return (
     <FooterStyle>
       <FooterItems>

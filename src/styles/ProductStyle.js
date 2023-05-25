@@ -7,6 +7,9 @@ export const ProductStyle = styled.div`
   flex-direction: column;
   padding: 1.5rem;
   box-shadow: var(--shadow-primary);
+  @media (max-width: 767px) {
+    padding: 0.5rem;
+  }
   img {
     width: 100%;
     cursor: pointer;
