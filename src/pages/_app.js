@@ -16,7 +16,6 @@ export default function App({ Component, pageProps }) {
           <Toaster />
           <Nav />
           <Component {...pageProps} />
-          <Footer />
         </Provider>
       </StateContext>
     </UserProvider>

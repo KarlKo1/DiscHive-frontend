@@ -4,8 +4,19 @@ export const DetailsStyle = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 5rem;
+
   img {
     width: 40%;
+    height: 100%;
+  }
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 60%;
+      margin-bottom: 2rem;
+    }
   }
 `;
 
@@ -16,6 +27,9 @@ export const ProductInfo = styled.div`
     font-weight: 500;
     padding: 0.5rem 1rem;
     cursor: pointer;
+  }
+  @media (max-width: 480px) {
+    width: 100%;
   }
 `;
 

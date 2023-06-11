@@ -5,6 +5,7 @@ import Products from "../components/Products";
 import { Gallery } from "../styles/Gallery";
 import { useRef } from "react";
 import About from "../components/About";
+import Footer from "../components/Footer";
 
 export default function Home() {
   //Fetch products from strapi
@@ -40,6 +41,7 @@ export default function Home() {
             <Products key={product.attributes.slug} product={product} />
           ))}
         </Gallery>
+        <Footer />
       </main>
     </>
   );
